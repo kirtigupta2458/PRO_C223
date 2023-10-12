@@ -25,29 +25,7 @@ else:
     #If still the password is not found i.e. result = 0, the below loop will try four character passwords. 81450625 Possible Combinations        
     if(result == 0):
         print("Checking for 4 character password...")
-        for i in characters:
-            for j in characters:
-                for k in characters:
-                    for l in characters:
-                        guess = str(i) + str(j) + str(k) + str(l)
-                        password=guess.encode('utf8').strip()
-                        #print(guess)
-                        c=c+1
-                        try:
-                            with zipfile.ZipFile(folderpath,'r') as zf:
-                                zf.extractall(pwd=password)
-                                print("Success! The password is: "+ guess)
-                                endtime = time.time()            #Save the end time
-                                result = 1                       #Set result variable to 1 on success
-                                break                            #If the password is found break from i for loop
-                        except:
-                            pass
-                    if result == 1:
-                        break                           #If the password is found break from j for loop
-                if result == 1:
-                    break                               #If the password is found break from k for loop
-            if result == 1:
-                break                                   #If the password is found break from l for loop
+                                       
 
     #Finally, if the password is not found even after appying all possile combination of characters upto 4 character length, notify the user as below, else print congratulations
     if(result == 0):
